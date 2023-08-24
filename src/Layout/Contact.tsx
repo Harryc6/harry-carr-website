@@ -1,18 +1,10 @@
 import {
     ActionIcon,
-    Avatar,
-    Box,
-    Center,
     Group,
-    rem,
-    Switch,
-    Text,
-    UnstyledButton,
     useMantineColorScheme,
     useMantineTheme,
 } from "@mantine/core"
 import React, { FC } from "react"
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
 import { FiSun } from "react-icons/fi"
 import { FaRegMoon } from "react-icons/fa"
 

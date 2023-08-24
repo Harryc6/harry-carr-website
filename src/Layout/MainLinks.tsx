@@ -6,7 +6,6 @@ import {
     UnstyledButton,
     useMantineColorScheme,
 } from "@mantine/core"
-import { AiOutlineIssuesClose, AiOutlinePullRequest } from "react-icons/ai"
 import { FiGithub } from "react-icons/fi"
 import { BiLogoLinkedin } from "react-icons/bi"
 import { HiOutlineMail } from "react-icons/hi"

@@ -2,7 +2,6 @@ import React, { FC } from "react"
 import { AppShell } from "@mantine/core"
 import { Outlet } from "react-router-dom"
 import { NavigationBar } from "./NavigationBar"
-import { HeaderBar } from "./HeaderBar"
 
 export const Layout: FC = () => {
     return (

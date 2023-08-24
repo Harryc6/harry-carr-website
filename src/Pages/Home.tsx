@@ -1,13 +1,5 @@
 import { FC } from "react"
-import {
-    createStyles,
-    Title,
-    Text,
-    Button,
-    Container,
-    rem,
-    useMantineColorScheme,
-} from "@mantine/core"
+import { useMantineColorScheme } from "@mantine/core"
 
 export const Home: FC = () => {
     const { colorScheme } = useMantineColorScheme()

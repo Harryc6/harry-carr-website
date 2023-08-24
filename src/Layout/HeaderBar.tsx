@@ -1,4 +1,3 @@
-import { Logo } from "./Icon"
 import {
     ActionIcon,
     Group,
