@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import {
+    ColorScheme,
+    ColorSchemeProvider,
+    MantineProvider,
+} from "@mantine/core"
+import "./App.css"
+import { Home } from "./Pages/Home"
+import { Layout } from "./Layout/Layout"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    const [colorScheme, setColorScheme] = useState<ColorScheme>("dark")
+    const toggleColorScheme = (value?: ColorScheme) =>
+        setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"))
+    return (
+        <ColorSchemeProvider
+            colorScheme={colorScheme}
+            toggleColorScheme={toggleColorScheme}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <MantineProvider
+                theme={{
+                    colorScheme: colorScheme,
+                }}
+                withGlobalStyles
+                withNormalizeCSS
+            >
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Layout />}>
+                            <Route index element={<Home />} />
+                            {/*<Route path="contact" element={<Contact />} />*/}
+                            {/*<Route path="*" element={<NoPage />} />*/}
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </MantineProvider>
+        </ColorSchemeProvider>
+    )
 }
 
-export default App;
+export default App
